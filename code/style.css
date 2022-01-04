@@ -66,9 +66,13 @@ h1{
  .tfidf_wl {
     display: inline-block;
  }
+ .shader_checkbox{
+     display: inline-block;
+     vertical-align:top;
+ }
  .box1{
     display: inline-block;
-    vertical-align:top
+    vertical-align:top;
  }
  .container {
     display: block;
