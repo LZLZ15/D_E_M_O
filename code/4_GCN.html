@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <!-- <style>
+            #allImage {display:none;}
+        </style> -->
+        <!-- <script type="text/javascript" src="./first_script.js"></script> -->
+        <title>Frame Prediction</title>
+    </head>
+    <body>
+        <h1>How to predict which scene the frame belongs to ? </h1>
+        <form>
+            <fieldset>
+                    <legend>View the image</legend>
+                    Choose a game:<br>
+                    <select id='selectedGame'>
+                        <option value="" selected="selected" hidden="hidden">Choose here</option>
+                        <option value='FS'>3D Marks FireStrike</option>
+                        <option value='GTA5'>Grand Theft AutoV</option>
+                    </select>
+                    <br><br>
+                    <!-- <div id="boton"> -->
+                    <input type="button"id="mySubmit" name="submit" value="Select" onclick="show()">
+                    <input type="reset" id="myclear"  name="clear"  value="Reset"  onclick="remove()" >
+            </fieldset>
+        </form> 
+
+        <form>
+                    <fieldset class="frame" style="display: none;">
+                    <legend>View the train/test accuracy plot</legend>
+                        <div class="acc">
+                            <img src="../result_image/GCN/fs_testset_acc.png" class='acc1'id="fs_accc" style="display:none;">
+                        </div>
+                        <div class="acc">
+                            <img src="../result_image/GCN/gta5_trainset_acc.png" class='acc1'id="gcn_accc" style="display:none;">
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="frame" style="display: none;">
+                    <legend>View the interprebility</legend>
+                        <div class="inline-block1">
+                            <img src="../result_image/GCN/fsaliency_class_0_index_2.png" class='gcn_fs'id="FS_0_image" style="display:none;">
+                        </div>
+                        <div class="inline-block1">
+                            <img src="../result_image/GCN/fsaliency_class_1_index_2.png" class='gcn_fs'id="FS_1_image" style="display:none;"/>
+                        </div>
+                        <br>
+                        <div class="inline-block2">
+                            <img src="../result_image/GCN/gsaliency_class_0_index_2.png" class='gcn_gtav'id="GTA5_0_image" style="display:none;">
+                        </div>
+                        <div class="inline-block2">
+                            <img src="../result_image/GCN/gsaliency_class_1_index_2.png" class='gcn_gtav'id="GTA5_1_image" style="display:none;"/>
+                        </div>
+                        <div class="inline-block2">
+                            <img src="../result_image/GCN/gsaliency_class_2_index_2.png" class='gcn_gtav'id="GTA5_2_image" style="display:none;">
+                        </div>
+                        <div class="inline-block2">
+                            <img src="../result_image/GCN/gsaliency_class_3_index_2.png" class='gcn_gtav'id="GTA5_3_image" style="display:none;"/>
+                        </div>
+                        <div class="inline-block2">
+                            <img src="../result_image/GCN/gsaliency_class_4_index_2.png" class='gcn_gtav'id="GTA5_4_image" style="display:none;">
+                        </div>
+                    </fieldset>
+        </form> 
+
+    <script>
+        function remove(){
+            var images = document.getElementsByClassName('acc1');
+            var l = images.length;
+            for (var i = 0; i < l; i++) {
+                    if(images[i].style.display==='block'){
+                        images[i].style.display='none'
+                    }
+            }
+            var images = document.getElementsByClassName('gcn_fs');
+            var l = images.length;
+            for (var i = 0; i < l; i++) {
+                    if(images[i].style.display==='block'){
+                        images[i].style.display='none'
+                    }
+            }
+            var images = document.getElementsByClassName('gcn_gtav');
+            var l = images.length;
+            for (var i = 0; i < l; i++) {
+                    if(images[i].style.display==='block'){
+                        images[i].style.display='none'
+                    }
+            }
+            var frames = document.getElementsByClassName('frame');
+            var l = frames.length;
+            for (var i = 0; i < l; i++) {
+                    if(frames[i].style.display==='block'){
+                        frames[i].style.display='none'
+                    }
+            }
+        }
+        function show() {
+            updateImg()
+            // document.getElementById('btnID').style.display = "mySubmit";
+        }
+
+    function updateImg(){
+        var select = document.getElementById('selectedGame');
+        console.log(select)
+		var option = select.options[select.selectedIndex];
+        console.log(option)
+
+        /* Access image by id and change the display property to block*/
+        document.getElementsByClassName('frame')[0].style.display="block";
+        document.getElementsByClassName('frame')[1].style.display="block";
+        if( option.value==='FS'){
+            document.getElementById('fs_accc').style.display = "block";
+            document.getElementsByClassName('gcn_fs')[0].style.display = "block";
+            document.getElementsByClassName('gcn_fs')[1].style.display = "block";
+        }
+        else if(option.value==='GTA5'){
+            document.getElementById('gcn_accc').style.display = "block";
+            document.getElementsByClassName('gcn_gtav')[0].style.display = "block";
+            document.getElementsByClassName('gcn_gtav')[1].style.display = "block";
+            document.getElementsByClassName('gcn_gtav')[2].style.display = "block";
+            document.getElementsByClassName('gcn_gtav')[3].style.display = "block";
+            document.getElementsByClassName('gcn_gtav')[4].style.display = "block";
+
+        }
+
+        // uncheck()
+
+    }// end of updateImg
+    </script>
+
+
+    </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <!-- <style>
+            #allImage {display:none;}
+        </style> -->
+        <!-- <script type="text/javascript" src="./first_script.js"></script> -->
+        <title>Converted GrandTheftAutoV_pass2_r1920x1080</title>
+    </head>
+    <body>
+        <h1>This pages shows sample graphs from frames</h1>
+        <form>
+            <fieldset>
+                    <legend>Select your interest</legend>
+                    <h3>Choose a game:</h3><br>
+                    <select id='selectedGame' onclick="disableBtn()">
+                        <option value="" selected="selected" hidden="hidden">Choose here</option>
+                        <option value='TS'>3D Marks TimeSpy</option>
+                        <option value='FS'>3D Marks FireStrike</option>
+                        <option value='GTA5'>Grand Theft AutoV</option>
+                    </select>
+                    <br><br>
+                    <h3>Choose a scene: </h3>
+                    <div class="radiobtn_group">
+                        <p>Please note that TimeSpy only has 1 scene (scene1), Fire Strike has 2 scenes (Scene1&amp;Scene2) and GTA5 has 5 scenes</p>
+                        <input type="radio" class="which_scene" name ="Scene" id="s1"> Scene1<br>
+                        <input type="radio" class="which_scene" name = "Scene"id="s2"> Scene2<br>
+                        <input type="radio" class="which_scene" name ="Scene"id="s3"> Scene3<br>
+                        <input type="radio" class="which_scene" name ="Scene"id="s4"> Scene4<br>
+                        <input type="radio" class="which_scene" name ="Scene"id="s5"> Scene5<br>
+                    <br>
+                    </div>
+                    <br>
+                    <h3>Choose graph format: </h3>
+                    <div class="radiobtn_group">
+                        <input type="radio" class="which_choice" name ="choice" id="choice1"> Integrated graph per frame<br>
+                        <input type="radio" class="which_choice" name ="choice"id="choice2"> 3 sample graphs from each frame<br>
+                    <br>
+                    </div>
+
+                    <!-- <div id="boton"> -->
+                    <input type="button"id="mySubmit" name="submit" value="Select" onclick="show()">
+                    <input type="reset" id="myClear" name="clear" value="Reset" onclick="remove()">
+            </fieldset>
+        </form>
+        <form>
+        <fieldset id="frame" style="display: none;">
+            <div >
+                <img src="../result_image/graph/gtav_f98_cs.png" class="gtav_frame_graph"id="gtav_f98_cs" style="display:none;"/>
+                <img src="../result_image/graph/gtav_f98_hs.png" class="gtav_frame_graph"id="gtav_f98_hs" style="display:none;"/>
+                <img src="../result_image/graph/gtav_f98_ls.png" class="gtav_frame_graph"id="gtav_f98_ls" style="display:none;"/>
+                <img src="../result_image/graph/gtav_f98_es.png" class="gtav_frame_graph"id="gtav_f98_es" style="display:none;"/>
+                <img src="../result_image/graph/gtav_f98_vs.png" class="gtav_frame_graph"id="gtav_f98_vs" style="display:none;"/>
+                <img src="../result_image/graph/gtav_f98_ps.png" class="gtav_frame_graph"id="gtav_f98_ps" style="display:none;"/>
+                <img src="../result_image/graph/gtav_f98_gs.png" class="gtav_frame_graph"id="gtav_f98_gs" style="display:none;"/>
+
+                <!-- <img src="../result_image/graph/gtav_f98_vs.png" class="frame_graph"id="gtav_f98_cs" style="display:none;"/> -->
+            </div> 
+        </fieldset>
+        </form> 
+
+
+
+    <script>
+    function remove(){
+        var images = document.getElementsByClassName('allImage');
+        console.log(images)
+        var l = images.length;
+        // myDiv.innerHTML = "";
+        for (var i = 0; i < l; i++) {
+                if(images[i].style.display==='block'){
+                    console.log('inside')
+                    console.log(images[i])
+                    images[i].style.display='none'
+                }
+        }
+        var frame = document.getElementById('frame');
+        if(frame.style.display==='block'){
+                frame.style.display='none'
+        }
+        var numScene = document.getElementsByClassName("which_scene")
+        for (var i = 0; i < numScene.length; i++) {
+            numScene[i].disabled=false
+        }
+    }
+    function disableBtn(){
+        var select = document.getElementById('selectedGame');
+        console.log(select)
+		var option = select.options[select.selectedIndex];
+        console.log(option) 
+        var numScene = document.getElementsByClassName("which_scene")
+        console.log(numScene[0].id)
+        if(option.value==='TS'){
+            for (var i = 0; i < numScene.length; i++) {
+                    if(numScene[i].id !=='s1'){
+                        numScene[i].disabled=true
+                    }
+            }
+        }
+        else if(option.value==='FS'){
+            for (var i = 0; i < numScene.length; i++) {
+                    if(numScene[i].id !=='s1' && numScene[i].id !=='s2' ){
+                        numScene[i].disabled=true
+                    }
+            }
+        }
+    }
+        
+    function show() {
+            updateImg()
+            // document.getElementById('btnID').style.display = "mySubmit";
+    }
+    function byFrame(){
+        var select = document.getElementById('selectedGame');
+        console.log(select)
+		var option = select.options[select.selectedIndex];
+        console.log(option) 
+        if(option.value==='TS'){
+            document.getElementById('TSimage').style.display = "block";
+        }
+        else if(option.value==="GTA5"){
+            if(document.getElementById('s1').checked){
+                var g_graph = document.getElementsByClassName('gtav_frame_graph')
+                len = g_graph.length
+                for (var i = 0; i < len; i++) {
+                    g_graph[i].style.display = "block";    
+                }
+            }
+            // else if(){
+
+            }
+
+
+        }
+
+        // else if(document.getElementById('s1').checked && option.value==='FS'){
+        //     document.getElementById('FS1image').style.display = "block";
+        // }
+        // else if(document.getElementById('s1').checked && option.value==='GTA5'){
+        //     //document.getElementsByClassName('allImage').display="none";
+        //     document.getElementById('G1image').style.display = "block";
+        // }
+        // else if(document.getElementById('s2').checked && option.value==='FS'){
+        //     //document.getElementsByClassName('allImage').display="none";
+        //     document.getElementById('FS2image').style.display = "block";
+        // }
+        // else if(document.getElementById('s2').checked && option.value==='GTA5'){
+        //     //document.getElementsByClassName('allImage').display="none";
+        //     document.getElementById('G2image').style.display = "block";
+        // }
+        // else if(document.getElementById('s3').checked && option.value==='GTA5'){
+        //     //document.getElementsByClassName('allImage').display="none";
+        //     document.getElementById('G3image').style.display = "block";
+        // }
+        // else if(document.getElementById('s4').checked && option.value==='GTA5'){
+        //     //document.getElementsByClassName('allImage').display="none";
+        //     document.getElementById('G4image').style.display = "block";
+        // }
+        // else if(document.getElementById('s5').checked && option.value==='GTA5'){
+        //     //document.getElementsByClassName('allImage').display="none";
+        //     document.getElementById('G5image').style.display = "block";
+        // }
+    function top3graphs(){
+
+    }
+    function updateImg(){
+
+
+        document.getElementById('frame').style.display="block";
+
+        if(document.getElementById('choice1').checked){
+            byFrame()
+        }
+        else if(document.getElementById('choice2').checked){
+            top3graphs()
+        }
+
+    }// end of updateImg
+    </script>
+
+
+    </body>
+</html>
