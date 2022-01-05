@@ -13,9 +13,8 @@
         <div>
             <form>
                 <fieldset>
-                    <legend>Choose games</legend>
+                    <legend>Choose 1 game</legend>
                     <div class="game_checkbox">
-    
                           <label class="container">F1_2018(Scene1)
                             <input type="checkbox" value="1"class="cluster"name = "F1_2018(Scene1)">
                             <span class="checkmark"></span>
@@ -156,37 +155,54 @@
             </form>  
 
         <form>
-                <fieldset class="frame" style="display: none;">
-                    <div class="allImg"></div>
-                    <legend>Shader efficiency prediction accuracy</legend>
-                        <div class="inline-block1">
-                            <img src="../result_image/efficiency_RF_CV.png" class='3d'id="3dplot" style="display:none;">
-                        </div>
-                    </fieldset>
-                    <br><br>
-                    <fieldset class="frame" style="display: none;">
-                    <legend>High efficiency</legend>
 
-                        <div class="tfidf_wl">
-                            <img src="../result_image/change/TimeSpy_CS_wl_tfid.png" class='ts_wl'id="ts_cs" style="display:none;">
-                        </div>
-                        <div class="tfidf_wl">
-                            <img src="../result_image/change/TimeSpy_GS_wl_tfid.png" class='ts_wl'id="ts_gs" style="display:none;">
-                        </div>
-                        <div class="tfidf_wl">
-                            <img src="../result_image/change/GTA5_CS_wl_tfid.png" class='gtav_wl'id="gtav_cs" style="display:none;">
-                        </div>
-                        <div class="tfidf_wl">
-                            <img src="../result_image/change/GTA5_HS_wl_tfid.png" class='gtav_wl'id="gtav_hs" style="display:none;">
-                        </div>
-                    </fieldset>    
-                        <br>
-                    <fieldset class="frame" style="display: none;">    
-                    <legend>Low efficiency</legend>
-                        <div class="inline-block1">
-                            <img src="../result_image/3dplot_kmeans_result2.png" class='3d'id="3dplot" style="display:none;">
-                        </div>
-                    </fieldset>
+
+
+            <fieldset id="highlow_frame" style="display: none;">
+                <fieldset id='MetroExodus' style="display: none;">
+                    <legend>High efficiency</legend>
+                        <img src="../result_image/efficiency/high/f11_MetroExodus_DX12_2K_lip_distinct_25percent_10.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/high/f11_MetroExodus_DX12_2K_lip_distinct_25percent_15066.png" 
+                        class="games"id="fs_f98_cs" />
+                        <legend>Low efficiency</legend>
+                        <img src="../result_image/efficiency/low/f11_MetroExodus_DX12_2K_lip_distinct_25percent_15004.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/low/f11_MetroExodus_DX12_2K_lip_distinct_25percent_29813.png" 
+                        class="games"id="fs_f98_cs"/>
+                </fieldset>  
+                <fieldset id='Fortnite' style="display: none;">
+                    <legend>High efficiency</legend>
+                        <img src="../result_image/efficiency/high/f39_Fortnite_dx12_4k_lip_distinct_25percent_121.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/high/f39_Fortnite_dx12_4k_lip_distinct_25percent_23.png" 
+                        class="games"id="fs_f98_cs" />
+                        <legend>Low efficiency</legend>
+                        <img src="../result_image/efficiency/low/f39_Fortnite_dx12_4k_lip_distinct_25percent_143.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/low/f39_Fortnite_dx12_4k_lip_distinct_25percent_116.png" 
+                        class="games"id="fs_f98_cs"/>
+                </fieldset>  
+                <fieldset id='Cyberpunk2077' style="display: none;">
+                    <legend>High efficiency</legend>
+                        <img src="../result_image/efficiency/high/f756_Cyberpunk2077_DX12_4k_lip_distinct_25percent_2009.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/high/f756_Cyberpunk2077_DX12_4k_lip_distinct_25percent_2745.png" 
+                        class="games"id="fs_f98_cs" />
+                        <legend>Low efficiency</legend>
+                        <img src="../result_image/efficiency/low/f756_Cyberpunk2077_DX12_4k_lip_distinct_25percent_1965.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/low/f756_Cyberpunk2077_DX12_4k_lip_distinct_25percent_2696.png" 
+                        class="games"id="fs_f98_cs"/>
+                </fieldset>                 
+            </fieldset>
+            <br><br>
+            <fieldset id="acc_frame" style="display: none;">
+                <legend>Shader efficiency prediction accuracy</legend>
+                    <div class="inline-block1">
+                        <img src="../result_image/efficiency_RF_CV.png" class='3d'id="3dplot" >
+                    </div>
+            </fieldset>
         </form> 
     </div>
 
@@ -215,13 +231,9 @@
                         images[i].style.display='none'
                     }
             }
-            var frames = document.getElementsByClassName('frame');
-            var l = frames.length;
-            for (var i = 0; i < l; i++) {
-                    if(frames[i].style.display==='block'){
-                        frames[i].style.display='none'
-                    }
-            }
+            document.getElementById('acc_frame').style.display='none'
+            document.getElementById('highlow_frame').style.display = "none";  
+
         }
         function show() {
             updateImg()
@@ -229,30 +241,23 @@
         }
 
     function updateImg(){
-        document.getElementById('3dplot').style.display = "block";
-        // var select = document.getElementById('selectedGame');
-        // console.log(select)
-		// var option = select.options[select.selectedIndex];
-        // console.log(option)
-
-        // /* Access image by id and change the display property to block*/
-        // if( option.value==='FS'){
-        //     // removeImg()
-        //     document.getElementsByClassName('fs_wl')[0].style.display = "block";
-        //     document.getElementsByClassName('fs_wl')[1].style.display = "block";
-        // }
-        // else if(option.value==='GTA5'){
-        //     // removeImg()
-        //     //document.getElementsByClassName('allImage').display="none";
-        //     document.getElementsByClassName('gtav_wl')[0].style.display = "block";
-        //     document.getElementsByClassName('gtav_wl')[1].style.display = "block";
-        // }
-        // else if(option.value ==='TS'){
-        //     document.getElementsByClassName('ts_wl')[0].style.display = "block";
-        //     document.getElementsByClassName('ts_wl')[1].style.display = "block";
-        // }
-
-        // uncheck()
+        document.getElementById('acc_frame').style.display = "block"; 
+        document.getElementById('highlow_frame').style.display = "block";  
+        var result = document.getElementsByClassName('cluster');
+        console.log(result[1])
+        for (var i = 0; i <  result.length; i++) {
+            if(result[i].checked){
+                if( result[i].name==='MetroExodus'){       
+                    document.getElementById('MetroExodus').style.display = "block";
+                }
+                else if(result[i].name==='Cyberpunk2077'){
+                    document.getElementById('Cyberpunk2077').style.display = "block";
+                }
+                else if(result[i].name==='fortnite'){
+                    document.getElementById('fortnite').style.display = "block";
+                }
+            }
+        }
 
     }// end of updateImg
     </script>
