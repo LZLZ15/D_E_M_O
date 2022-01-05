@@ -14,6 +14,25 @@
             <form>
                 <fieldset>
                     <legend>Choose 1 game</legend>
+                    
+                        <div class="game_checkbox">
+                            <label class="container">The Medium
+                                <input type="checkbox" value="0"class="cluster"name = "Medium">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Godfall
+                                <input type="checkbox" value="0"class="cluster"name = "Godfall">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Fortnite
+                                <input type="checkbox" value="1" class="cluster"name = "Fortnite">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">Hitman2
+                                <input type="checkbox" value="0"class="cluster"name = "Hitman2">
+                                <span class="checkmark"></span>
+                            </label>                       
+                    </div>
                     <div class="game_checkbox">
                           <label class="container">F1_2018(Scene1)
                             <input type="checkbox" value="1"class="cluster"name = "F1_2018(Scene1)">
@@ -27,10 +46,11 @@
                             <input type="checkbox" value="1"class="cluster"name = "F1_2018(Scene3)">
                             <span class="checkmark"></span>
                           </label>
-                          <label class="container">F1_2018(Scene4)
-                            <input type="checkbox" value="1"class="cluster"name = "F1_2018(Scene4)">
+                          <label class="container">MetroExodus
+                            <input type="checkbox" value="0"class="cluster"name = "MetroExodus">
                             <span class="checkmark"></span>
-                          </label>
+                            </label>
+
                     </div>
                     <div class="game_checkbox">
                         <label class="container">Cyberpunk2077
@@ -38,8 +58,12 @@
                              <!-- checked="checked" -->
                              <span class="checkmark"></span>
                            </label>
-    
-                          <label class="container">Battlefield5(Scene1)
+                          <!-- <label class="container">F1_2018(Scene4)
+                            <input type="checkbox" value="1"class="cluster"name = "F1_2018(Scene4)">
+                            <span class="checkmark"></span>
+                          </label> -->
+
+                          <!-- <label class="container">Battlefield5(Scene1)
                             <input type="checkbox" value="1"class="cluster"name = "Battlefield5(Scene1)">
                             <span class="checkmark"></span>
                         </label>
@@ -49,14 +73,11 @@
                           </label>
                           <label class="container">Battlefield5(Scene3)
                             <input type="checkbox" value="0"class="cluster"name = "Battlefield5(Scene3)">
-                            <span class="checkmark"></span>
-                      </label>
+                            <span class="checkmark"></span> 
+                        </label>-->
                     </div>
-                    <div class="game_checkbox">
-                        <label class="container">MetroExodus
-                            <input type="checkbox" value="0"class="cluster"name = "MetroExodus">
-                            <span class="checkmark"></span>
-                        </label>
+                    <!-- <div class="game_checkbox">
+
                         <label class="container">The Wicher(Scene1)
                             <input type="checkbox" value="1"class="cluster"name = "The Wicher(Scene1)">
                             <span class="checkmark"></span>
@@ -69,10 +90,10 @@
                             <input type="checkbox" value="1"class="cluster"name = "The Wicher(Scene3)">
                             <span class="checkmark"></span>
                         </label>
-                    </div>
+                    </div> -->
     
     
-                    <div class="game_checkbox">
+                    <!-- <div class="game_checkbox">
                         <label class="container">FC5(Scene1)
                             <input type="checkbox" value="3"class="cluster"name = "FC5(Scene1)">
                             <span class="checkmark"></span>
@@ -89,8 +110,8 @@
                             <input type="checkbox" value="3"class="cluster"name = "FC5(Scene4)">
                             <span class="checkmark"></span>
                         </label>
-                    </div>
-    
+                    </div> -->
+ <!--    
                     <div class="game_checkbox">
                         <label class="container">HorizonZeroDawn
                             <input type="checkbox" value="0"class="cluster"name = "HorizonZeroDawn">
@@ -110,15 +131,9 @@
                         </label>
                     </div>
     
+ 
+    
                     <div class="game_checkbox">
-                        <label class="container">The Medium
-                            <input type="checkbox" value="0"class="cluster"name = "The Medium">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Godfall
-                            <input type="checkbox" value="0"class="cluster"name = "Godfall">
-                            <span class="checkmark"></span>
-                        </label>
                         <label class="container">XuanYuanSword7
                             <input type="checkbox" value="0"class="cluster"name = "XuanYuanSword7">
                             <span class="checkmark"></span>
@@ -127,17 +142,7 @@
                             <input type="checkbox" value="0"class="cluster"name = "Anno">
                             <span class="checkmark"></span>
                         </label>
-                    </div>
-    
-                    <div class="game_checkbox">
-                        <label class="container">Fortnite
-                            <input type="checkbox" value="1" class="cluster"name = "Fortnite">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">Hitman2
-                            <input type="checkbox" value="0"class="cluster"name = "Hitman2">
-                            <span class="checkmark"></span>
-                        </label>
+
                         <label class="container">Suntemple
                             <input type="checkbox" value="0"class="cluster"name = "Suntemple">
                             <span class="checkmark"></span>
@@ -146,16 +151,13 @@
                             <input type="checkbox" value="0"class="cluster"name = "F1_2020"> 
                             <span class="checkmark"></span>
                           </label>
-                    </div>
+                    </div> -->
                         <br><br>
                         <!-- <div id="boton"> -->
                         <input type="button"id="mySubmit" name="submit" value="Select" onclick="show()">
                         <input type="reset" id="myClear" name="clear" value="Reset" onclick="remove()">
                 </fieldset>
             </form>  
-
-        <form>
-
 
 
             <fieldset id="highlow_frame" style="display: none;">
@@ -193,6 +195,80 @@
                         <img src="../result_image/efficiency/low/f756_Cyberpunk2077_DX12_4k_lip_distinct_25percent_1965.png" 
                         class="games"id="fs_f98_cs" />
                         <img src="../result_image/efficiency/low/f756_Cyberpunk2077_DX12_4k_lip_distinct_25percent_2696.png" 
+                        class="games"id="fs_f98_cs"/>
+                </fieldset>
+
+                <fieldset id='Hitman2' style="display: none;">
+                    <legend>High efficiency</legend>
+                        <img src="../result_image/efficiency/high/f49_Hitman2_DX12_4K_lip_distinct_25percent_10.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/high/f49_Hitman2_DX12_4K_lip_distinct_25percent_2940.png" 
+                        class="games"id="fs_f98_cs" />
+                        <legend>Low efficiency</legend>
+                        <img src="../result_image/efficiency/low/f49_Hitman2_DX12_4K_lip_distinct_25percent_15893.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/low/f49_Hitman2_DX12_4K_lip_distinct_25percent_2608.png" 
+                        class="games"id="fs_f98_cs"/>
+                </fieldset>    
+
+                <fieldset id='Godfall' style="display: none;">
+                    <legend>High efficiency</legend>
+                        <img src="../result_image/efficiency/high/f29_Godfall_4k_DX12_lip_distinct_25percent_7656.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/high/f29_Godfall_4k_DX12_lip_distinct_25percent_8021.png" 
+                        class="games"id="fs_f98_cs" />
+                        <legend>Low efficiency</legend>
+                        <img src="../result_image/efficiency/low/f29_Godfall_4k_DX12_lip_distinct_25percent_20923.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/low/f29_Godfall_4k_DX12_lip_distinct_25percent_9223.png" 
+                        class="games"id="fs_f98_cs"/>
+                </fieldset>  
+                <fieldset id='Medium' style="display: none;">
+                    <legend>High efficiency</legend>
+                        <img src="../result_image/efficiency/high/f2901_Medium_Scene3_DX12_2K_lip_distinct_25percent_18658.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/high/f2901_Medium_Scene3_DX12_2K_lip_distinct_25percent_6307.png" 
+                        class="games"id="fs_f98_cs" />
+                        <legend>Low efficiency</legend>
+                        <img src="../result_image/efficiency/low/f2901_Medium_Scene3_DX12_2K_lip_distinct_25percent_11625.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/low/f2901_Medium_Scene3_DX12_2K_lip_distinct_25percent_9059.png" 
+                        class="games"id="fs_f98_cs"/>
+                </fieldset>
+                <fieldset id='f2004_f12018' style="display: none;">
+                    <legend>High efficiency</legend>
+                        <img src="../result_image/efficiency/high/f2004_f12018_dx11_lip_distinct_25percent_298.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/high/f2004_f12018_dx11_lip_distinct_25percent_5.png" 
+                        class="games"id="fs_f98_cs" />
+                        <legend>Low efficiency</legend>
+                        <img src="../result_image/efficiency/low/f2004_f12018_dx11_lip_distinct_25percent_1847.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/low/f2004_f12018_dx11_lip_distinct_25percent_1930.png" 
+                        class="games"id="fs_f98_cs"/>
+                </fieldset>                   
+                <fieldset id='f344_f12018' style="display: none;">
+                    <legend>High efficiency</legend>
+                        <img src="../result_image/efficiency/high/f344_f12018_DX11_lip_distinct_25percent_1717.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/high/f344_f12018_DX11_lip_distinct_25percent_230.png" 
+                        class="games"id="fs_f98_cs" />
+                        <legend>Low efficiency</legend>
+                        <img src="../result_image/efficiency/low/f344_f12018_DX11_lip_distinct_25percent_1884.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/low/f344_f12018_DX11_lip_distinct_25percent_1884.png" 
+                        class="games"id="fs_f98_cs"/>
+                </fieldset>  
+                <fieldset id='f810_f12018' style="display: none;">
+                    <legend>High efficiency</legend>
+                        <img src="../result_image/efficiency/high/f810_f12018_DX11_lip_distinct_25percent_1966.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/high/f810_f12018_DX11_lip_distinct_25percent_422.png" 
+                        class="games"id="fs_f98_cs" />
+                        <legend>Low efficiency</legend>
+                        <img src="../result_image/efficiency/low/f810_f12018_DX11_lip_distinct_25percent_1974.png" 
+                        class="games"id="fs_f98_cs" />
+                        <img src="../result_image/efficiency/low/f810_f12018_DX11_lip_distinct_25percent_266.png" 
                         class="games"id="fs_f98_cs"/>
                 </fieldset>                 
             </fieldset>
@@ -232,7 +308,9 @@
                     }
             }
             document.getElementById('acc_frame').style.display='none'
-            document.getElementById('highlow_frame').style.display = "none";  
+            document.getElementById('highlow_frame').style.display='none'
+
+
 
         }
         function show() {
@@ -253,9 +331,27 @@
                 else if(result[i].name==='Cyberpunk2077'){
                     document.getElementById('Cyberpunk2077').style.display = "block";
                 }
-                else if(result[i].name==='fortnite'){
-                    document.getElementById('fortnite').style.display = "block";
+                else if(result[i].name==='Fortnite'){
+                    document.getElementById('Fortnite').style.display = "block";
                 }
+                else if(result[i].name==='Hitman2'){
+                    document.getElementById('Hitman2').style.display = "block";
+                }
+                else if(result[i].name==='Godfall'){
+                    document.getElementById('Godfall').style.display = "block";
+                }
+                else if(result[i].name==='Medium'){
+                    document.getElementById('Medium').style.display = "block";
+                }
+                else if(result[i].name==='F1_2018(Scene1)'){
+                    document.getElementById('f2004_f12018').style.display = "block";
+                }  
+                else if(result[i].name==='F1_2018(Scene2)'){
+                    document.getElementById('f344_f12018').style.display = "block";
+                }
+                else if(result[i].name==='F1_2018(Scene3)'){
+                    document.getElementById('f810_f12018').style.display = "block";
+                }                              
             }
         }
 

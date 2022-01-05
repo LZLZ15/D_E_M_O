@@ -2,6 +2,21 @@
     margin: 0;
     padding: 20;
 }
+.text-wrap {
+    white-space: normal;
+  }
+.fs_frame_graph2,.fs_frame_graph1{
+    width: 400px;
+    height: 300px;
+}
+.games{
+    width: 300px;
+    height: 200px;
+}
+.gtav_frame_graph1,.gtav_frame_graph2,.gtav_frame_graph3,.gtav_frame_graph4,.gtav_frame_graph5{
+    width: 400px;
+    height: 300px;
+}
 .game_checkbox{
     display: inline-block;
 }
@@ -63,6 +78,10 @@ h1{
  .inline-block2 {
     display: inline-block;
  }
+ .all_s{
+     width: 300px;
+     display: inline-block;
+ }
  .tfidf_wl {
     display: inline-block;
  }
@@ -71,6 +90,10 @@ h1{
      vertical-align:top;
  }
  .box1{
+    display: inline-block;
+    vertical-align:top;
+ }
+ .game_checkbox{
     display: inline-block;
     vertical-align:top;
  }
