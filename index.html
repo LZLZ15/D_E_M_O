@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Graph Analysis on shaders</title>
+        <!-- <link href="style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <h1>Demo of ShaderNet</h1>
+        <p>This is a demonstration of analysis flow when given a new game to tune GPU performance </p>
+        <fieldset>
+            <h2>Check video game basic information</h2>
+            <ul>
+                <li> <a href="./code/1_real_image.html">view the game image</a></li>
+                <li> <a href="./code/2_converted_graph.html">view the converted graph</a></li>
+                <li>  <a href="./code/3_evolution.html">Analyze the evoltion</a></li>
+            </ul>
+        </fieldset> 
+
+        <fieldset>
+            <h2> Given a full set of new video game shader codes</h2>
+            <h3> Check game groups</h3>
+            <ul>
+                <li>Check if it belongs to any existing game group <a href="./code/6_group_games.html">see the result</a></li>
+            </ul>
+            <h3> If not belong to any group </h3>  
+            <ul> 
+                <li> check shader efficiency <a href="./code/7_shader_efficiency.html">see the result</a></li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <h2> Given pieces of frames data of new game </h2>
+            <h3>Check scenes</h3>
+                <p>Check if these data are in the same scene or they should be separately treated as different scenes</p>
+            <ul>
+                <li>view sudden changes in game <a href="./code/5_sudden_change.html">see the result</a></li>
+            </ul>
+            <h3>For unknow scene frame</h3>
+            <p>Given an unknow frame number or unknow scene number frame data, check which scene it is</p>
+            <p>If it belongs to known scenes, can use representative data from that group to tune</p>
+            <p>If it doesnt belong to any scene, treat it as separate scene to tune</p>
+            <ul>
+                <li>view frame prediction<a href="./code/4_GCN.html">see the result</a></li>
+            </ul>
+        </fieldset>
+        
+        
+        
+      </body>
+</html>
