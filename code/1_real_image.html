@@ -27,7 +27,7 @@
                     <div class="radiobtn_group">
                         Choose a scene: 
                         <p>Please note that TimeSpy only has 1 scene (scene1), Fire Strike has 2 scenes (Scene1&amp;Scene2) and GTA5 has 5 scenes</p>
-                        <input type="radio" class="which_scene" name ="Scene" id="s1" > Scene1<br>
+                        <input type="radio" class="which_scene" name ="Scene" id="s1">Scene1<br>
                         <input type="radio" class="which_scene" name ="Scene"id="s2"> Scene2<br>
                         <input type="radio" class="which_scene" name ="Scene"id="s3"> Scene3<br>
                         <input type="radio" class="which_scene" name ="Scene"id="s4"> Scene4<br>
@@ -35,7 +35,7 @@
                     <br>
                     </div>
                     <input type="button"id="mySubmit" name="submit" value="Select" onclick="show()">
-                    <input type="reset" id="myClear" name="clear" value="Reset" onclick="remove()">
+                    <input type="reset" id="myclear" name="clear" value="Reset" onclick="remove()">
             </fieldset>
                     <br><br>
             <fieldset id="frame" style="display: none;">
@@ -91,6 +91,10 @@
         console.log(option) 
         var numScene = document.getElementsByClassName("which_scene")
         console.log(numScene[0].id)
+        for (var i = 0; i < numScene.length; i++) {
+            numScene[i].disabled=false
+        }
+
         if(option.value==='TS'){
             for (var i = 0; i < numScene.length; i++) {
                     if(numScene[i].id !=='s1'){
