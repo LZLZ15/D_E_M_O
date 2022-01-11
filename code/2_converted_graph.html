@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="style.css" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet">
         <!-- <style>
             #allImage {display:none;}
         </style> -->
@@ -24,6 +24,7 @@
                     <h3>Choose a scene: </h3>
                     <div class="radiobtn_group">
                         <p>Please note that TimeSpy only has 1 scene (scene1), Fire Strike has 2 scenes (Scene1&amp;Scene2) and GTA5 has 5 scenes</p>
+                        <p>show the actual images after choose the scene</p>
                         <input type="radio" class="which_scene" name ="Scene" id="s1"> Scene1<br>
                         <input type="radio" class="which_scene" name = "Scene"id="s2"> Scene2<br>
                         <input type="radio" class="which_scene" name ="Scene"id="s3"> Scene3<br>
@@ -41,7 +42,7 @@
 
                     <!-- <div id="boton"> -->
                     <input type="button"id="mySubmit" name="submit" value="Select" onclick="show()">
-                    <input type="reset" id="myClear" name="clear" value="Reset" onclick="remove()">
+                    <input type="reset" id="myclear" name="clear" value="Reset" onclick="remove()">
             </fieldset>
         </form>
         <form>
@@ -303,6 +304,9 @@
         console.log(option) 
         var numScene = document.getElementsByClassName("which_scene")
         console.log(numScene[0].id)
+        for (var i = 0; i < numScene.length; i++) {
+            numScene[i].disabled=false
+        }      
         if(option.value==='TS'){
             for (var i = 0; i < numScene.length; i++) {
                     if(numScene[i].id !=='s1'){
