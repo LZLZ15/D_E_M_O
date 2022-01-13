@@ -104,11 +104,7 @@ h1{
  .inline-block2 {
     display: inline-block;
  }
- .all_s{
-     width: 300px;
-     display: inline-block;
-     vertical-align:top;
- }
+
  .tfidf_wl {
     display: inline-block;
  }
@@ -209,7 +205,16 @@ h1{
     width: 400px;
     height: 150px;
 }
-
+.all_s{
+    width: 400px;
+    /* height: 300px; */
+     display: inline-block;
+     vertical-align:top;
+ }
+ .gtav_sample_graph1,.gtav_sample_graph2,.gtav_sample_graph3,.gtav_sample_graph4,.gtav_sample_graph5{
+    width: 400px;
+    height: 300px;
+ }
 /* 
 #monkey{
     font-size: 50px;
