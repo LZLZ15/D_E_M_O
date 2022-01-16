@@ -9,59 +9,99 @@
         <title>Frame Prediction</title>
     </head>
     <body>
-        <h1>How to predict which scene the frame belongs to ? </h1>
+        <h1>Scene prediction of an unknow frame </h1>
         <form>
-            <fieldset>
-                    <legend>View the image</legend>
-                    Choose a game:<br>
-                    <select id='selectedGame'>
-                        <option value="" selected="selected" hidden="hidden">Choose here</option>
-                        <option value='FS'>3D Marks FireStrike</option>
-                        <option value='GTA5'>Grand Theft AutoV</option>
-                    </select>
-                    <br><br>
-                    <!-- <div id="boton"> -->
-                    <input type="button"id="mySubmit" name="submit" value="Select" onclick="show()">
-                    <input type="reset" id="myclear"  name="clear"  value="Reset"  onclick="remove()" >
-            </fieldset>
+            <fieldset style="width:70% ; border:1;">
+                Choose a game:<br>
+                <select id='selectedGame'>
+                    <option value="" selected="selected" hidden="hidden">Select a game</option>
+                    <option value='FS'>3D Marks FireStrike</option>
+                    <option value='GTA5'>Grand Theft AutoV</option>
+                </select>
+                <br><br>
+                Choose the frame dataset you want to classify:<br>
+                <select id='selectedFrame'>
+                    <option value="" selected="selected" hidden="hidden">Select a frame</option>
+                    <option value='100'>Frame #100</option>
+                    <option value='200'>Frame #200</option>
+                    <option value='300'>Frame #300</option>
+                    <option value='400'>Frame #400</option>   
+                    <option value='500'>Frame #500</option>
+                    <option value='600'>Frame #600</option>                                    
+                </select>
+                <br><br>
+
+                <!-- <div id="boton"> -->
+                <input type="button"id="mySubmit" name="submit" value="Select" onclick="show()">
+                <input type="reset" id="myclear"  name="clear"  value="Reset"  onclick="remove()" >
+                </fieldset>
         </form> 
-
+        <br>
         <form>
-                    <fieldset class="frame" style="display: none;">
-                    <legend>View the train/test accuracy plot</legend>
-                        <div class="acc">
-                            <img src="../result_image/GCN/fs_testset_acc.png" class='acc1'id="fs_accc" style="display:none;">
-                        </div>
-                        <div class="acc">
-                            <img src="../result_image/GCN/gta5_trainset_acc.png" class='acc1'id="gcn_accc" style="display:none;">
-                        </div>
-                    </fieldset>
+            <fieldset class="frame" id="frame_result" style="display: none;width:70% ; border:1;"> 
+                <legend>Prediction result</legend>
+                <!-- <p>This frame belongs to GTA5 game <em>Scene1</em></p> -->
+            </fieldset>
+            <br>
+            <fieldset class="frame" style="display: none;width:70% ; border:1;">
+                <legend>View important nodes</legend>
 
-                    <fieldset class="frame" style="display: none;">
-                    <legend>View the interprebility</legend>
-                        <div class="inline-block1">
-                            <img src="../result_image/GCN/fsaliency_class_0_index_2.png" class='gcn_fs'id="FS_0_image" style="display:none;">
-                        </div>
-                        <div class="inline-block1">
-                            <img src="../result_image/GCN/fsaliency_class_1_index_2.png" class='gcn_fs'id="FS_1_image" style="display:none;"/>
-                        </div>
-                        <br>
-                        <div class="inline-block2">
-                            <img src="../result_image/GCN/gsaliency_class_0_index_2.png" class='gcn_gtav'id="GTA5_0_image" style="display:none;">
-                        </div>
-                        <div class="inline-block2">
-                            <img src="../result_image/GCN/gsaliency_class_1_index_2.png" class='gcn_gtav'id="GTA5_1_image" style="display:none;"/>
-                        </div>
-                        <div class="inline-block2">
-                            <img src="../result_image/GCN/gsaliency_class_2_index_2.png" class='gcn_gtav'id="GTA5_2_image" style="display:none;">
-                        </div>
-                        <div class="inline-block2">
-                            <img src="../result_image/GCN/gsaliency_class_3_index_2.png" class='gcn_gtav'id="GTA5_3_image" style="display:none;"/>
-                        </div>
-                        <div class="inline-block2">
-                            <img src="../result_image/GCN/gsaliency_class_4_index_2.png" class='gcn_gtav'id="GTA5_4_image" style="display:none;">
-                        </div>
-                    </fieldset>
+
+                <fieldset class="fs_scene" style="display:none; width: 40%;">
+                    <legend>Scene1</legend>
+                    <div class="inline-block1">
+                        <img src="../result_image/GCN/fsaliency_class_0_index_2.png" class='gcn_fs'id="FS_0_image" style="display:inline-block;">
+                    </div>
+                </fieldset>
+                <fieldset class="fs_scene" style="display:none;width: 40%;">
+                    <legend>Scene2</legend>
+                    <div class="inline-block1">
+                        <img src="../result_image/GCN/fsaliency_class_1_index_2.png" class='gcn_fs'id="FS_1_image" style="display:inline-block;"/>
+                    </div>
+                </fieldset>
+
+
+                <fieldset class="gtav_scene" style="display:none;">
+                    <legend>Scene1</legend>
+                    <div class="inline-block2">
+                        <img src="../result_image/GCN/gsaliency_class_0_index_2.png" class='gcn_gtav'id="GTA5_0_image" style="display:inline-block;">
+                    </div>
+                </fieldset>
+                <fieldset class="gtav_scene" style="display:none;">
+                    <legend>Scene2</legend>                   
+                    <div class="inline-block2">
+                        <img src="../result_image/GCN/gsaliency_class_1_index_2.png" class='gcn_gtav'id="GTA5_1_image" style="display:inline-block;"/>
+                    </div>
+                </fieldset>
+                <fieldset class="gtav_scene" style="display:none;">
+                    <legend>Scene3</legend>                        
+                    <div class="inline-block2">
+                        <img src="../result_image/GCN/gsaliency_class_2_index_2.png" class='gcn_gtav'id="GTA5_2_image" style="display:inline-block;">
+                    </div>
+                </fieldset>
+                <fieldset class="gtav_scene" style="display:none;">
+                    <legend>Scene4</legend>                        
+                    <div class="inline-block2">
+                        <img src="../result_image/GCN/gsaliency_class_3_index_2.png" class='gcn_gtav'id="GTA5_3_image" style="display:inline-block;"/>
+                    </div>
+                </fieldset>
+                <fieldset class="gtav_scene" style="display:none;">
+                    <legend>Scene5</legend>                       
+                    <div class="inline-block2">
+                        <img src="../result_image/GCN/gsaliency_class_4_index_2.png" class='gcn_gtav'id="GTA5_4_image" style="display:inline-block;">
+                    </div>
+                </fieldset>
+            </fieldset>
+            
+            <fieldset class="frame" style="display: none;width:70% ; border:1;">
+                <legend>View the train/test accuracy plot</legend>
+                    <div class="acc">
+                        <img src="../result_image/GCN/fs_testset_acc.png" class='acc1'id="fs_accc" style="display:none;">
+                    </div>
+                    <div class="acc">
+                        <img src="../result_image/GCN/gta5_trainset_acc.png" class='acc1'id="gcn_accc" style="display:none;">
+                    </div>
+            </fieldset>
         </form> 
 
     <script>
@@ -106,25 +146,73 @@
 		var option = select.options[select.selectedIndex];
         console.log(option)
 
+        var select_frame = document.getElementById('selectedFrame');
+        console.log(select_frame)
+		var option_frame = select_frame.options[select_frame.selectedIndex];
+        console.log(option_frame)
+        
+
         /* Access image by id and change the display property to block*/
         document.getElementsByClassName('frame')[0].style.display="block";
         document.getElementsByClassName('frame')[1].style.display="block";
+        document.getElementsByClassName('frame')[2].style.display="block";
         if( option.value==='FS'){
             document.getElementById('fs_accc').style.display = "block";
             document.getElementsByClassName('gcn_fs')[0].style.display = "block";
-            document.getElementsByClassName('gcn_fs')[1].style.display = "block";
+            
+            var fs_scene = document.getElementsByClassName('fs_scene');
+            console.log(fs_scene)
+            for (var i = 0; i < fs_scene.length; i++) {
+                    if(fs_scene[i].style.display==='none'){
+                        fs_scene[i].style.display='inline-block'
+                    }
+            }           
+
+            var html = "<p>This frame belongs to Fire Strike";
+            if (option_frame.value==='100')
+                html+=" game <em>Scene1";
+            else if(option_frame.value==='200')
+                html+=" game <em>Scene1";
+            else if(option_frame.value==='300')
+                html+=" game <em>Scene1";
+            else if(option_frame.value==='400')
+                html+=" game <em>Scene2";
+            else if(option_frame.value==='500')
+                html+=" game <em>Scene2";     
+            else if(option_frame.value==='600')
+                html+=" game <em>Scene2";                                                                  
+            html+="</em></p>";
+            document.getElementById("frame_result").innerHTML = html;
+                 
         }
         else if(option.value==='GTA5'){
             document.getElementById('gcn_accc').style.display = "block";
-            document.getElementsByClassName('gcn_gtav')[0].style.display = "block";
-            document.getElementsByClassName('gcn_gtav')[1].style.display = "block";
-            document.getElementsByClassName('gcn_gtav')[2].style.display = "block";
-            document.getElementsByClassName('gcn_gtav')[3].style.display = "block";
-            document.getElementsByClassName('gcn_gtav')[4].style.display = "block";
+            var gtav_scene = document.getElementsByClassName('gtav_scene');
+            console.log(fs_scene)
+            for (var i = 0; i < gtav_scene.length; i++) {
+                    if(gtav_scene[i].style.display==='none'){
+                        gtav_scene[i].style.display='inline-block'
+                    }
+            }  
 
+            var html = "<p>This frame belongs to ";//GTA5 game <em>Scene1
+            html+=option.value;
+            if (option_frame.value==='100')
+                html+=" game <em>Scene1";
+            else if(option_frame.value==='200')
+                html+=" game <em>Scene2";
+            else if(option_frame.value==='300')
+                html+=" game <em>Scene3";
+            else if(option_frame.value==='400')
+                html+=" game <em>Scene4";
+            else if(option_frame.value==='500')
+                html+=" game <em>Scene4";     
+            else if(option_frame.value==='600')
+                html+=" game <em>Scene5";                                                                  
+            html+="</em></p>";
+            document.getElementById("frame_result").innerHTML = html;
         }
-
-        // uncheck()
+    
 
     }// end of updateImg
     </script>
