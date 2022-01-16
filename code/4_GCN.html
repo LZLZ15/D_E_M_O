@@ -106,6 +106,7 @@
 
     <script>
         function remove(){
+            document.location.reload()
             var images = document.getElementsByClassName('acc1');
             var l = images.length;
             for (var i = 0; i < l; i++) {
@@ -113,14 +114,14 @@
                         images[i].style.display='none'
                     }
             }
-            var images = document.getElementsByClassName('gcn_fs');
+            var images = document.getElementsByClassName('fs_scene');
             var l = images.length;
             for (var i = 0; i < l; i++) {
                     if(images[i].style.display==='block'){
                         images[i].style.display='none'
                     }
             }
-            var images = document.getElementsByClassName('gcn_gtav');
+            var images = document.getElementsByClassName('gtav_scene');
             var l = images.length;
             for (var i = 0; i < l; i++) {
                     if(images[i].style.display==='block'){
