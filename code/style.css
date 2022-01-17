@@ -15,7 +15,7 @@ body{
     color: rgb(22, 32, 5);
     font-size:  0.9em;
 }
-#selectedFrame{
+#selectedFrame,#selectedFrame_fs,#selectedFrame_gtav{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(22, 32, 5);
     font-size:  0.9em;
@@ -36,6 +36,10 @@ body{
 .games{
     width: 450px;
     height: 300px;
+}
+.fs_wl,.gtav_wl{
+    width: 450px;
+    height: 280px;  
 }
 .gtav_frame_graph1,.gtav_frame_graph2,.gtav_frame_graph3,.gtav_frame_graph4,.gtav_frame_graph5{
     width: 400px;
@@ -85,10 +89,7 @@ body{
     width: 750;
     height: 300px;
 }
-.fs_wl{
-    width: 750;
-    height: 300px;
-}
+
 .allImage{
     width: 750px;
     height: 300px;
