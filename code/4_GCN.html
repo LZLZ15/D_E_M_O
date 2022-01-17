@@ -13,14 +13,22 @@
         <form>
             <fieldset style="width:70% ; border:1;">
                 Choose a game:<br>
-                <select id='selectedGame'>
+                <select id='selectedGame' onclick="pop_select_frame()">
                     <option value="" selected="selected" hidden="hidden">Select a game</option>
                     <option value='FS'>3D Marks FireStrike</option>
                     <option value='GTA5'>Grand Theft AutoV</option>
                 </select>
                 <br><br>
-                Choose the frame dataset you want to classify:<br>
-                <select id='selectedFrame'>
+                <select id='selectedFrame_fs' style="display: none; width:30%; border:1;">  
+                    <option value="" selected="selected" hidden="hidden">Select a frame</option>
+                    <option value='400'>Frame #400</option>
+                    <option value='600'>Frame #600</option>
+                    <option value='800'>Frame #800</option>
+                    <option value='1600'>Frame #1600</option>   
+                    <option value='1800'>Frame #1800</option>
+                    <option value='2000'>Frame #2000</option>                                    
+                </select>
+                <select id='selectedFrame_gtav' style="display: none; width:30%;border:1;">
                     <option value="" selected="selected" hidden="hidden">Select a frame</option>
                     <option value='100'>Frame #100</option>
                     <option value='200'>Frame #200</option>
@@ -43,6 +51,24 @@
                 <!-- <p>This frame belongs to GTA5 game <em>Scene1</em></p> -->
             </fieldset>
             <br>
+
+
+            <fieldset class="frame" style="display: none;width:70% ; border:1;">
+                <legend>View scene difference through graph similarity</legend>
+                <div class="inline-block1" id="fs_wl" style="display:none;">
+                    <img src="../result_image/change/FS_LS_wl_tfid.png" class='fs_wl'id="FS_0_image" style="display:inline-block;">
+                    <!-- <figcaption style="display: inline-block;">Fire strike local shader graph similarity plot</figcaption> -->
+                    <img src="../result_image/change/FS_VS_wl_tfid.png" class='fs_wl'id="FS_0_image" style="display:inline-block;">
+                    <!-- <figcaption>Fire strike vertex shader graph similarity plot</figcaption> -->
+                </div>
+                <div class="inline-block1"id="gtav_wl"  style="display:none;">
+                    <img src="../result_image/change/GTA5_CS_wl.png" class='gtav_wl'id="FS_0_image" style="display:inline-block;">
+                    <img src="../result_image/change/GTA5_HS_wl.png" class='gtav_wl'id="FS_0_image" style="display:inline-block;">
+                </div> 
+            </fieldset>
+            <br>    
+
+
             <fieldset class="frame" style="display: none;width:70% ; border:1;">
                 <legend>View important nodes</legend>
 
@@ -140,26 +166,40 @@
             updateImg()
             // document.getElementById('btnID').style.display = "mySubmit";
         }
-
+    function pop_select_frame(){
+        var select = document.getElementById('selectedGame');
+        console.log(select)
+		var option = select.options[select.selectedIndex];
+        
+        console.log(option)
+        if( option.value==='FS'){
+           
+            document.getElementById('selectedFrame_fs').style.display="block";
+        }
+        else if( option.value==='GTA5')
+            document.getElementById('selectedFrame_gtav').style.display="block";
+        
+    }
     function updateImg(){
         var select = document.getElementById('selectedGame');
         console.log(select)
 		var option = select.options[select.selectedIndex];
         console.log(option)
-
-        var select_frame = document.getElementById('selectedFrame');
-        console.log(select_frame)
-		var option_frame = select_frame.options[select_frame.selectedIndex];
-        console.log(option_frame)
         
 
         /* Access image by id and change the display property to block*/
         document.getElementsByClassName('frame')[0].style.display="block";
         document.getElementsByClassName('frame')[1].style.display="block";
         document.getElementsByClassName('frame')[2].style.display="block";
+        document.getElementsByClassName('frame')[3].style.display="block";
         if( option.value==='FS'){
+            var select_frame = document.getElementById('selectedFrame_fs');
+            console.log(select_frame)
+            var option_frame = select_frame.options[select_frame.selectedIndex];
+            console.log(option_frame)
             document.getElementById('fs_accc').style.display = "block";
             document.getElementsByClassName('gcn_fs')[0].style.display = "block";
+            document.getElementById('fs_wl').style.display = "block";
             
             var fs_scene = document.getElementsByClassName('fs_scene');
             console.log(fs_scene)
@@ -170,25 +210,32 @@
             }           
 
             var html = "<p>This frame belongs to Fire Strike";
-            if (option_frame.value==='100')
+            if (option_frame.value==='400')
                 html+=" game <em>Scene1";
-            else if(option_frame.value==='200')
-                html+=" game <em>Scene1";
-            else if(option_frame.value==='300')
-                html+=" game <em>Scene1";
-            else if(option_frame.value==='400')
-                html+=" game <em>Scene2";
-            else if(option_frame.value==='500')
-                html+=" game <em>Scene2";     
             else if(option_frame.value==='600')
+                html+=" game <em>Scene1";
+            else if(option_frame.value==='800')
+                html+=" game <em>Scene1";
+            else if(option_frame.value==='1600')
+                html+=" game <em>Scene2";
+            else if(option_frame.value==='1800')
+                html+=" game <em>Scene2";     
+            else if(option_frame.value==='200')
                 html+=" game <em>Scene2";                                                                  
             html+="</em></p>";
             document.getElementById("frame_result").innerHTML = html;
                  
         }
         else if(option.value==='GTA5'){
+            var select_frame = document.getElementById('selectedFrame_gtav');
+            console.log(select_frame)
+            var option_frame = select_frame.options[select_frame.selectedIndex];
+            console.log(option_frame)
             document.getElementById('gcn_accc').style.display = "block";
             var gtav_scene = document.getElementsByClassName('gtav_scene');
+
+            document.getElementById('gtav_wl').style.display = "block";
+
             console.log(fs_scene)
             for (var i = 0; i < gtav_scene.length; i++) {
                     if(gtav_scene[i].style.display==='none'){
