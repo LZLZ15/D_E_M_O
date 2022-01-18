@@ -8,8 +8,12 @@
 
 
 <!-- Scripts Explanation -->
+## Graph  
+The sample graphs of disassembly shaders can be found in  [Link to the folder](../sample_graph/)
 
+## Scripts Explanation
 
+All the scripts are written in python 3.8. To run the script, please lunch a python tools like Anaconda or directly run "python xx.py" 
 1. Frequent subgraph result analysis 
 
     Frequent subgraph mining utilized the library of gSpan in the link listed in useful link. 
@@ -31,7 +35,7 @@
     
 	[Find max similarity for each pair of games' fsm](graph_similarity_measure.py)
    
-  	[Prepare train dataset](prepare_dataset_clustering.py)
+  	[Prepare train dataset] (prepare_dataset_clustering.py)
 
 
     Step2:clustering with PCA feature reduction
