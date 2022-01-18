@@ -1,6 +1,12 @@
 # ShaderNet New App Efficiency
 <!-- TABLE OF CONTENTS -->
 
+## Graph  
+The sample graphs of disassembly shaders can be found in  [Link to the folder](../sample_graph/)
+
+## Scripts Explanation
+
+All the scripts are written in python 3.8. To run the script, please lunch a python tools like Anaconda or directly run "python xx.py" 
 
 1. Frequent subgraph result analysis 
 
