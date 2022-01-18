@@ -1,8 +1,6 @@
 # ShaderNet New App Efficiency
 <!-- TABLE OF CONTENTS -->
 
-### Intergame Analysis
-[Link to the folder](Inter_Game/)
 
 1. Frequent subgraph result analysis 
 
