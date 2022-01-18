@@ -31,7 +31,7 @@
     
 	[Find max similarity for each pair of games' fsm](graph_similarity_measure.py)
    
-  	[Prepare train dataset] (prepare_dataset_clustering.py)
+  	[Prepare train dataset](prepare_dataset_clustering.py)
 
 
     Step2:clustering with PCA feature reduction
