@@ -22,9 +22,6 @@
     
     Scripts: [select longest patterns from gSpan result ](select_distinct_subgraph_labelgame.py)
 
-    An example to compute frequent subgraph similarity value 
-
-    Scripts: [WL kernel graph similarity measurement ](graph_similarity_meansure.py)
 
 2. Game clustering 
 	
@@ -32,9 +29,9 @@
 
     Step1: Dataset preparation 
     
-	[Find max similarity for each pair of games' fsm](WL_kernel_inter_game_fsm.py)
+	[Find max similarity for each pair of games' fsm](graph_similarity_measure.py)
    
-  	[Prepare train dataset](prepare_dataset_clustering.py)
+  	[Prepare train dataset] (prepare_dataset_clustering.py)
 
 
     Step2:clustering with PCA feature reduction
