@@ -1,11 +1,5 @@
 # ShaderNet Graph Structural Evolution
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
-
-* [About the Project](#about-the-project)
-* [Graph creation](#Graph-creation)
-* [Scripts Explanation](#Scripts-Explanation)
-
 <!-- Graph creation -->
 ## Graph  
 The sample graphs of disassembly shaders can be found in  [Link to the folder](../sample_graph/)
