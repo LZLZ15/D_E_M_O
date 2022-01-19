@@ -9,21 +9,20 @@
         <title>Evolution</title>
     </head>
     <body>
-        <h1>This pages shows evolution of frames from sample games</h1>
+        <h1>Analyze the evolution of graph structural propterties</h1>
         <div>
         <form>
-            <fieldset >
-                    <legend>View game statistics</legend>
+            <fieldset style="width:44% ; border:1;" >
+                    <!-- <legend>View game statistics</legend> -->
                     Choose a game:<br>
-                    <select id='selectedGame'>
+                    <select id='selectedGame' onchange="showimage()">
                         <option value="" selected="selected" hidden="hidden">Choose here</option>
-                        <!-- <option value='TS'>3D Marks TimeSpy</option> -->
                         <option value='FS'>3D Marks FireStrike</option>
                         <option value='GTA5'>Grand Theft AutoV</option>
                     </select>
                     <br><br>
 
-                    <label class="container">Evolution
+                    <label class="container">Node and edge count
                         <input type="checkbox" name="g" >
                          <!-- checked="checked" -->
                          <span class="checkmark"></span>
@@ -41,29 +40,44 @@
                     <input type="reset" id="myclear"  name="clear"  value="Reset"  onclick="remove()" >
             </fieldset>
         </form> 
-        <fieldset  class="frame" style="display: none;">
+        <fieldset id="image_frame" style="width:44% ;display: none; border:1;">
+            <!-- style="width:65% ;height:700px; display:inline-block;vertical-align:top;border: 0;" -->
+            <legend>View the image </legend>        
+            <div >
+                <img src="../result_image/TimeSpy.png" class="btnImage"id="TSimage" style="display:none;"/>
+                <img src="../result_image/GrandTheftAutoV_pass0_r1920x1080.png" class="btnImage" id="G1image" style="display:none;"/>
+                <img src="../result_image/GrandTheftAutoV_pass1_r1920x1080.png" class="btnImage" id="G2image" style="display:none;"/>
+                <img src="../result_image/GrandTheftAutoV_pass2_r1920x1080.png" class="btnImage"id="G3image" style="display:none;"/>
+                <img src="../result_image/GrandTheftAutoV_pass3_r1920x1080.png"  class="btnImage"id="G4image" style="display:none;"/>
+                <img src="../result_image/GrandTheftAutoV_pass4_r1920x1080.png" class="btnImage"id="G5image" style="display:none;"/>
+                <img src="../result_image/FireStrike_GT1_2K.png" class="btnImage"id="FS1image" style="display:none;"/>
+                <img src="../result_image/FireStrike_GT2_2K.png" class="btnImage"id="FS2image" style="display:none;"/>
+            </div>
+    </fieldset>
+    <br>
+        <fieldset  class="frame" style="width:44% ;display: none;border:1;">
             <legend>Node and edge statistics</legend>
             <div class="allImg">
                 <div class="inline-block1">
-                    <img src="../result_image/figure2-9_FS_node_bar%.png" class='evo'id="FS_node_image" style="display:none;">
+                    <img src="../result_image/figure2-9_FS_node_bar.png" class='evo'id="FS_node_image" style="display:none;">
                 </div>
                 <div class="inline-block1">
-                    <img src="../result_image/figure2-9_FS_edge_bar%.png" class='evo'id="FS_edge_image" style="display:none;"/>
+                    <img src="../result_image/figure2-9_FS_edge_bar.png" class='evo'id="FS_edge_image" style="display:none;"/>
                 </div>                      
                 <div class="inline-block2">
-                    <img src="../result_image/figure2-9_GTA5_node_bar%.png" class='evo'id="GTA5_node_image" style="display:none;">
+                    <img src="../result_image/figure2-9_GTA5_node_bar.png" class='evo'id="GTA5_node_image" style="display:none;">
                 </div>
                 <div class="inline-block2">
-                    <img src="../result_image/figure2-9_GTA5_edge_bar%.png" class='evo'id="GTA5_edge_image" style="display:none;"/>
+                    <img src="../result_image/figure2-9_GTA5_edge_bar.png" class='evo'id="GTA5_edge_image" style="display:none;"/>
                 </div>
             </div>
         </fieldset>
-        <br><br>
+        <br>
 
 
-        <fieldset  class="frame" style="display: none;">
+        <fieldset  class="frame" style="width:21% ;display: none;border:1;">
             <legend>Degree statistics</legend>
-            <div class="allImg">
+            <div class="cycle_degree_img">
                 <div class="inline-block1">
                     <img src="../result_image/FS_degree.png" class='degree'id="fs_degree" style="display:none;">
                 </div>
@@ -73,9 +87,9 @@
             </div>
         </fieldset>
 
-        <fieldset class="frame" style="display: none;">
+        <fieldset class="frame" style="width:21% ;display: none;border:1;">
             <legend>Cycle statistics</legend>
-            <div class="allImg">
+            <div class="cycle_degree_img">
                 <div class="inline-block2">
                     <img src="../result_image/FS_cycle_from0.png" class='cycle'id="fs_cycle" style="display:none;">
                 </div>
@@ -91,6 +105,7 @@
 
     <script>
     function remove(){
+            document.location.reload()
             var images = document.getElementsByClassName('evo');
             var l = images.length;
             for (var i = 0; i < l; i++) {
@@ -120,6 +135,25 @@
                     }
             }
     }
+    function showimage(){
+        document.getElementById('image_frame').style.display="block";
+        var select = document.getElementById('selectedGame');
+        console.log(select)
+		var option = select.options[select.selectedIndex];
+        console.log(option) 
+        if( option.value==='FS'){
+            document.getElementById('FS1image').style.display = "inline-block";
+            document.getElementById('FS2image').style.display = "inline-block";
+        }
+        else if( option.value==='GTA5'){
+            document.getElementById('G1image').style.display = "inline-block";
+            document.getElementById('G2image').style.display = "inline-block";
+            document.getElementById('G3image').style.display = "inline-block";
+            document.getElementById('G4image').style.display = "inline-block";
+            document.getElementById('G5image').style.display = "inline-block";
+
+        }
+    }
     function show() {
             updateImg()
             getcheckbox()
@@ -131,19 +165,12 @@
         console.log(inputElements[0])
         console.log(inputElements[1].checked)
 
-        // for(var i=0; inputElements[i]; ++i){
-        //     if(inputElements[i].checked){
-        //         checkedValue = inputElements[i].value;
-        //         console.log(checkedValue)
-        //         break;
-        //     }
-        // }
     }
     function updateImg(){
         var select = document.getElementById('selectedGame');
-        console.log(select)
+        // console.log(select)
 		var option = select.options[select.selectedIndex];
-        console.log(option)
+        // console.log(option)
         var inputcheck = document.getElementsByName('g');
 
         /* Access image by id and change the display property to block*/
@@ -159,22 +186,23 @@
                 document.getElementsByClassName('evo')[3].style.display = "block";
             }
         }
+        //<!-- style="width:65% ;height:700px; display:inline-block;vertical-align:top;border: 0;" -->
         if(inputcheck[1].checked){
-            document.getElementsByClassName('frame')[1].style.display="block";
+            document.getElementsByClassName('frame')[1].style.display="inline-block";
             if( option.value==='FS'){
-                document.getElementById('fs_cycle').style.display = "block";
+                document.getElementById('fs_cycle').style.display = "inline-block";
             }
             else if(option.value==='GTA5'){
-                document.getElementById('gtav_cycle').style.display = "block";
+                document.getElementById('gtav_cycle').style.display = "inline-block";
             }
         }
         if(inputcheck[2].checked){
-            document.getElementsByClassName('frame')[2].style.display="block";
+            document.getElementsByClassName('frame')[2].style.display="inline-block";
             if( option.value==='FS'){
-                document.getElementById('fs_degree').style.display = "block";
+                document.getElementById('fs_degree').style.display = "inline-block";
             }
             else if(option.value==='GTA5'){
-                document.getElementById('gtav_degree').style.display = "block";
+                document.getElementById('gtav_degree').style.display = "inline-block";
             }
         }
 
