@@ -6,19 +6,37 @@
             #allImage {display:none;}
         </style> -->
         <!-- <script type="text/javascript" src="./first_script.js"></script> -->
-        <title>Real Images</title>
+        <title>Efficiency Prediction</title>
     </head>
     <body>
-        <h1>Source code for shader efficiency prediction </h1>
+        <h1>Source Code For ShaderNet New App Efficiency </h1>
         <div>
         <form>
             <br>
-            <fieldset class='evo'style="width:60% ; height:200px; display:inline-block;vertical-align:top ; border: 0;">
+            <fieldset class='evo'style="width:90% ; height:200px; display:inline-block;vertical-align:top ; border: 0;">
+
+                <h2>Sample shader graphs</h2>
+                <br>
                 <ul>
-                    <li>Classify frequent sub-structures into high/low efficiency
-                            <a href="../source_code/New_App_Efficiency/randomForest.py">[code] </a>                                   
-                    </li>
+                    <li>The sample graphs of disassembly shaders can be found here 
+                        <a href="../source_code/sample_graph/">[sample graphs] </a> </li>
                 </ul>
+                <br>
+                <h2>Scripts explanation </h2>
+                <p>All the scripts are written in python 3.8. To run the script, please lunch a python tools like Anaconda or directly run "python xx.py"</p>
+                <br>
+                <ol id="order_list">
+                    <li>Frequent subgraph result analysis<br>
+                        Frequent subgraph mining utilized the library of gSpan in the link listed in useful link.<br>
+                        An example to convert gSpan output text to edgelist and nodelist:
+                        <a href="../source_code/New_App_Tuning/fsm_file_to_edgelist_hash.py">[code] </a> 
+                    </li>
+                    <br>
+                    <li>Classify frequent sub-structures into high/low efficiency
+                        <a href="../source_code/New_App_Efficiency/randomForest.py">[code] </a>  
+                    </li>                         
+                </ol>
+
             </fieldset>
         </form>                                   
         </div>
