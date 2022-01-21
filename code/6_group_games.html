@@ -101,7 +101,7 @@
 
         </form> 
         <form>
-            <fieldset style="width: 45% ; border:1;">
+            <fieldset style="width: 65% ; border:1;">
                 <legend>Choose game to check its group </legend>
                 <div class="game_checkbox">
                     <input type="radio" value="3" class="cluster" name ="Fortnite"id="s1"> Fortnite<br>
@@ -118,19 +118,53 @@
                 <input type="reset" id="myclear" name="clear" value="Reset" onclick="remove()">
             </fieldset>
         </form>
-        <fieldset class="prediction_table" style="display: none;width:45% ;height:310px; border:1;">
+        <br>
+        <fieldset class="prediction_table" style="display: none;width:65% ;border:1;">
                 <legend>Clustering result in table</legend>
-                <div class="inline-block1"  style="display:inline-block;">
+                <div class="inline-block10"  style="display:inline-block;">
                     <table class="box" id="box1" style="display:none;"></table>
                     <table class="box" id="box2" style="display:none;"></table>
                     <table class="box" id="box3" style="display:none;"></table>
                     <table class="box" id="box4" style="display:none;"></table>
                 </div>
-                <div class="inline-block1" style="display:inline-block;">
+                <div class="inline-block10" style="display:inline-block;">
                     <img src="../result_image/cluster/3dplot_kmeans_24game_fc5.png" class='plot3d'id="fc5" style="display:none;">
                     <img src="../result_image/cluster/3dplot_kmeans_24game_fornite.png" class='plot3d'id="fornite" style="display:none;">
                     <img src="../result_image/cluster/3dplot_kmeans_24game_godfall.png" class='plot3d'id="godfall" style="display:none;">
                     <img src="../result_image/cluster/3dplot_kmeans_24game_hitman2.png" class='plot3d'id="hitman2" style="display:none;">
+
+                </div>
+    
+                <div class="inline-block10" style="display:inline-block;">
+                    <fieldset id = 'fc5_msg' class='msg' style=" width:600px ; display:none;border: 0;">
+                    <legend>Possible explanations of clustering result </legend>
+                        <ul>
+                            <li>Different scenes from the same game have somewhat similar frequent subgraphs</li>
+                        </ul>
+                    </fieldset>  
+                    <fieldset id='fortnite_msg' class='msg' style=" width: 600px ;display:none;border: 0;">
+                        <legend>Possible explanations of clustering result </legend>
+                        <ul>
+                            <li>Not conclusive </li>
+                        </ul>
+                     </fieldset> 
+    
+                    <fieldset id='hitman2_msg' class='msg' style="width: 600px ;display:none;border: 0;">
+                        <legend>Possible explanations of clustering result </legend>
+                        <ul>
+                            <li>9/11 games in the same group use Microsoft DirectX 12 for rendering the GPU pipeline. Hitman2 is one of the 9 games</li>
+
+                        </ul>
+                    </fieldset>  
+                    <fieldset id='godfall_msg' class='msg' style="width: 600px ;display:none;border: 0;">
+                        <legend>Possible explanations of clustering result </legend>
+                        <ul>
+                            <li>Game engines used for developing the games may affect the high-level coding, as a result the shader codes can be affected. In the same group, XuanYuanSword7, Suntemple and Godfall are all adopting Unreal Engine. </li>
+                            <br>
+                            <li>9/11 games in the same group use Microsoft DirectX 12 for rendering the GPU pipeline. Godfall is one of the 9 games</li>
+                            
+                        </ul>
+                    </fieldset>  
 
                 </div>
         </fieldset>
@@ -183,15 +217,20 @@
 
                 if(result[i].name==='Fortnite'){
                     document.getElementById('fornite').style.display="inline-block";
+                    document.getElementById('fortnite_msg').style.display="inline-block";
+                    
                 }  
                 else if(result[i].name==='Hitman2'){
                     document.getElementById('hitman2').style.display="inline-block";
+                    document.getElementById('hitman2_msg').style.display="inline-block";
                 } 
                 else if(result[i].name==='FC5(Scene4)'){
                     document.getElementById('fc5').style.display="inline-block";
+                    document.getElementById('fc5_msg').style.display="inline-block";
                 } 
                 else if(result[i].name==='Godfall'){
                     document.getElementById('godfall').style.display="inline-block";
+                    document.getElementById('godfall_msg').style.display="inline-block";
                 } 
 
                 if( result[i].value==='1'){
@@ -205,7 +244,7 @@
                     }
                     html+="</table>";
                     document.getElementById("box1").innerHTML = html;
-                    document.getElementById("box1").style="border:thick solid #0100FF; height:300px; width:200px";
+                    document.getElementById("box1").style="border:thin solid #1e1d45; height:300px; width:200px";
                     break;
                 }
                 else if(result[i].value==='2'){
@@ -220,7 +259,7 @@
                     }
                     html+="</table>";
                     document.getElementById("box2").innerHTML = html;
-                    document.getElementById("box2").style="border:thick solid #0100FF; height:300px; width:200px";                   
+                    document.getElementById("box2").style="border:thin solid #1e1d45; height:300px; width:200px";                   
                     break; 
                 }
                  else if(result[i].value==='3'){
@@ -235,27 +274,27 @@
                     html+="</table>";
                     console.log(html)
                     document.getElementById("box3").innerHTML = html;
-                    document.getElementById("box3").style="border:thick solid #0100FF; height:300px; width:200px";       
+                    document.getElementById("box3").style="border:thin solid #1e1d45; height:300px; width:200px";       
           
                     break; 
                 }
-                 else if(result[i].value==='4'){
-                    console.log(group4arr.length)
-                    group4arr.push(result[i].name)
-                    console.log(group4arr.length)
-                    var html = "<table border='1'>";
-                    html+="<tr><td><b>Group4</b></td></tr>"
-                    for (var i = 0; i < group4arr.length; i++) {
-                        html+="<tr>";
-                        html+="<td>"+group4arr[i]+"</td>";
-                        html+="</tr>";
-                    }
-                    html+="</table>";
-                    document.getElementById("box4").innerHTML = html;
-                    document.getElementById("box4").style="border:thick solid #0100FF; height:300px; width:200px";                    
-                    break;  
+                //  else if(result[i].value==='4'){
+                //     console.log(group4arr.length)
+                //     group4arr.push(result[i].name)
+                //     console.log(group4arr.length)
+                //     var html = "<table border='1'>";
+                //     html+="<tr><td><b>Group4</b></td></tr>"
+                //     for (var i = 0; i < group4arr.length; i++) {
+                //         html+="<tr>";
+                //         html+="<td>"+group4arr[i]+"</td>";
+                //         html+="</tr>";
+                //     }
+                //     html+="</table>";
+                //     document.getElementById("box4").innerHTML = html;
+                //     document.getElementById("box4").style="border:thick solid #1e1d45; height:300px; width:200px";                    
+                //     break;  
                 
-                }
+                //}
 
             }
         }

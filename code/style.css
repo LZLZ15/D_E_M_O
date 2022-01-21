@@ -96,6 +96,10 @@ body{
     margin: 10;
     padding: 10px;
 }
+.cluster{
+    margin: 10;
+    padding: 10px;
+}
 
 h1{
     font-size: 35px;
@@ -111,6 +115,14 @@ h1{
     display: inline-block;
     vertical-align:top;
  }
+
+ .inline-block10 {
+    display: inline-block;
+    vertical-align:top;
+    margin: 10;
+    padding: 10px;
+ }
+
  .inline-block2 {
     display: inline-block;
  }
@@ -141,6 +153,9 @@ h1{
  .game_checkbox{
     display: inline-block;
     vertical-align:top;
+    margin: 10;
+    padding: 10px;
+    
  }
  .container {
     display: block;
