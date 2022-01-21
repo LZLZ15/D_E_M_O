@@ -9,7 +9,7 @@
         <title>Shader efficiency</title>
     </head>
     <body>
-        <h1>Shader efficiency classification </h1>
+        <h1>Shader Efficiency Classification </h1>
         <div>
             <form>
                 <fieldset  style="width:90% ; border:1;">
@@ -33,14 +33,14 @@
                 <legend>Prediction result</legend>
 
                 <fieldset id='MetroExodus'class='MetroExodus' style="display: none;">
-                    <fieldset id='ML' class='ML' style="border: 1;width:100% ;">
+                    <fieldset class='ML' style="border: 1;width:100% ;">
                         <legend>Low efficiency examples</legend>
                             <img src="../result_image/efficiency/low-hw/f11_MetroExodus_DX12_2K_lip_distinct_25percent_11993.png" 
                             class="games"id="fs_f98_cs" />
                             <img src="../result_image/efficiency/low-hw/f11_MetroExodus_DX12_2K_lip_distinct_25percent_15004.png" 
                             class="games"id="fs_f98_cs"/>
                     </fieldset>
-                    <fieldset id='MH' style="border: 1;width:100% ;">
+                    <fieldset class='MH' style="border: 1;width:100% ;">
                         <legend>High efficiency examples</legend>
                             <img src="../result_image/efficiency/high-hw/f11_MetroExodus_DX12_2K_lip_distinct_25percent_11993.png" 
                             class="games"id="fs_f98_cs" />
@@ -50,14 +50,14 @@
                 </fieldset>  
 
                 <fieldset id='Fortnite' class = 'Fortnite' style="display: none;">
-                    <fieldset id='ML' class='ML' style="border: 1;width:100% ;">
+                    <fieldset  class='ML' style="border: 1;width:100% ;">
                         <legend>Low efficiency examples</legend>
                             <img src="../result_image/efficiency/low-hw/f39_Fortnite_dx12_4k_lip_distinct_25percent_116.png" 
                             class="games"id="fs_f98_cs" />
                             <img src="../result_image/efficiency/low-hw/f39_Fortnite_dx12_4k_lip_distinct_25percent_147.png" 
                             class="games"id="fs_f98_cs"/>
                     </fieldset>
-                    <fieldset id='ML' class='ML' style="border: 1;width:100% ;">
+                    <fieldset  class='MH' style="border: 1;width:100% ;">
                         <legend>High efficiency examples</legend>        
                         <img src="../result_image/efficiency/high-hw/f39_Fortnite_dx12_4k_lip_distinct_25percent_1.png" 
                         class="games"id="fs_f98_cs" />
@@ -66,14 +66,14 @@
                     </fieldset>    
                 </fieldset>  
                 <fieldset id='Hitman2' style="display: none;">
-                    <fieldset id='ML' class='ML' style="border: 1;width:100% ;">
+                    <fieldset class='ML' style="border: 1;width:100% ;">
                         <legend>Low efficiency examples</legend>
                         <img src="../result_image/efficiency/low-hw/f49_Hitman2_DX12_4K_lip_distinct_25percent_15893.png" 
                         class="games"id="fs_f98_cs" />
                         <img src="../result_image/efficiency/low-hw/f49_Hitman2_DX12_4K_lip_distinct_25percent_2608.png" 
                         class="games"id="fs_f98_cs"/>
                     </fieldset>
-                    <fieldset id='ML' class='ML' style="border: 1;width:100% ;">
+                    <fieldset  class='MH' style="border: 1;width:100% ;">
                         <legend>High efficiency examples</legend>                               
                         <img src="../result_image/efficiency/high-hw/f49_Hitman2_DX12_4K_lip_distinct_25percent_2545.png" 
                         class="games"id="fs_f98_cs" />
@@ -169,10 +169,10 @@
                     </ul>
                 </fieldset>  
 
-            <br>
-                <fieldset id='prediction_percentage'style="display:none;border: 1;">
+            <br><br>
+                <fieldset id='prediction_percentage'style="  display:none;border: 1;">
                     <legend>Shader efficiency prediction accuracy</legend>
-                    <table border='2' id='prediction_metroexodus'style="display:none;">
+                    <table border='1' id='prediction_metroexodus'style="width:800px; display:none;">
                         <tr>
                             <th>Game</th>
                             <th>Average occurance in % <br>(actual low efficiency shader)</th>
@@ -193,10 +193,10 @@
                     <table border='1' id='prediction_fortnite'style="display:none;">
                         <tr>
                             <th>Game</th>
-                            <th>Average occurance in % (actual low efficiency shader)</th>
-                            <th>Average occurance in % (actual high efficiency shader)</th>
-                            <th>Average occurance in % (predicted low efficiency shader)</th>
-                            <th>Average occurance in % (predicted high efficiency shader)</th>
+                            <th>Average occurance in % <br>(actual low efficiency shader)</th>
+                            <th>Average occurance in % <br>(actual high efficiency shader)</th>
+                            <th>Average occurance in % <br>(predicted low efficiency shader)</th>
+                            <th>Average occurance in % <br>(predicted high efficiency shader)</th>
                             <th>Accuracy</th>
                         </tr>
                         <tr>
@@ -211,10 +211,10 @@
                     <table border='1' id='prediction_hitman2'style="display:none;">
                         <tr>
                             <th>Game</th>
-                            <th>Average occurance in % (actual low efficiency shader)</th>
-                            <th>Average occurance in % (actual high efficiency shader)</th>
-                            <th>Average occurance in % (predicted low efficiency shader)</th>
-                            <th>Average occurance in % (predicted high efficiency shader)</th>
+                            <th>Average occurance in % <br>(actual low efficiency shader)</th>
+                            <th>Average occurance in % <br>(actual high efficiency shader)</th>
+                            <th>Average occurance in % <br>(predicted low efficiency shader)</th>
+                            <th>Average occurance in % <br>(predicted high efficiency shader)</th>
                             <th>Accuracy</th>
                         </tr>
 
@@ -274,7 +274,7 @@
         }
 
     function updateImg(){
-        document.getElementById('prediction_percentage').style="width:90% ; border:1;display : block;";
+        document.getElementById('prediction_percentage').style="width:83% ; border:1;display : block;";
         document.getElementById('highlow_frame').style="width:65% ; border:1;display : inline-block;";
 
         var select = document.getElementById('selectedGame');
@@ -285,40 +285,21 @@
         if( result.value==='MetroExodus'){  
 
             document.getElementById('MetroExodus').style=" display:inline-block;vertical-align:top;border: 0;";
-            document.getElementById('MetroExodus_msg').style="width:20% ;height:700px; display:inline-block;vertical-align:top;border: 1;";
+            document.getElementById('MetroExodus_msg').style="width:20% ;height:735px; display:inline-block;vertical-align:top;border: 1;";
             document.getElementById('prediction_metroexodus').style=" display:inline-block;vertical-align:top;border: 1;";
             //style="width:20% ;height:200px; display:inline-block;vertical-align:top;border: 0;">
         }
-        else if(result.value==='Cyberpunk2077'){
-            document.getElementById('Cyberpunk2077').style.display = "block";
-        }
         else if(result.value==='Fortnite'){
             document.getElementById('Fortnite').style=" display:inline-block;vertical-align:top;border: 0;";
-            document.getElementById('Fortnite_msg').style="width:20% ;height:700px; display:inline-block;vertical-align:top;border: 1;";
+            document.getElementById('Fortnite_msg').style="width:20% ;height:735px; display:inline-block;vertical-align:top;border: 1;";
             document.getElementById('prediction_fortnite').style=" display:inline-block;vertical-align:top;border: 1;";
         }
         else if(result.value==='Hitman2'){
             document.getElementById('Hitman2').style=" display:inline-block;vertical-align:top;border: 0;";
-            document.getElementById('Hitman2_msg').style="width:20% ;height:700px; display:inline-block;vertical-align:top;border: 1;";
+            document.getElementById('Hitman2_msg').style="width:20% ;height:735px; display:inline-block;vertical-align:top;border: 1;";
             document.getElementById('prediction_hitman2').style=" display:inline-block;vertical-align:top;border: 1;";
         }
-        else if(result.value==='Godfall'){
-            document.getElementById('Godfall').style.display = "block";
-        }
-        else if(result.value==='Medium'){
-            document.getElementById('Medium').style.display = "block";
-        }
-        else if(result.value==='F1_2018(Scene1)'){
-            document.getElementById('f2004_f12018').style.display = "block";
-        }  
-        else if(result.value==='F1_2018(Scene2)'){
-            document.getElementById('f344_f12018').style.display = "block";
-        }
-        else if(result.value==='F1_2018(Scene3)'){
-            document.getElementById('f810_f12018').style.display = "block";
-        }                              
-            
-        
+                         
 
     }// end of updateImg
     </script>

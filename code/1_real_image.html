@@ -9,14 +9,11 @@
         <title>Real Images</title>
     </head>
     <body>
-        <h1>This pages shows the actual images rendered on the screen</h1>
+        <h1>Actual Images Rendered On The Screen</h1>
         <div>
         <form>
-            <fieldset>
-                    <br>
-                    <legend>Select your interest</legend>
-   
-                    Choose a game:
+            <fieldset  style="width:60% ; border:1;">
+                    <h3>Choose a game:</h3>
                     <select id='selectedGame' onclick="disableBtn()">
                         <option value="" selected="selected" hidden="hidden">Choose here</option>
                         <option value='TS'>3D Marks TimeSpy</option>
@@ -38,7 +35,7 @@
                     <input type="reset" id="myclear" name="clear" value="Reset" onclick="remove()">
             </fieldset>
                     <br><br>
-            <fieldset id="frame" style="display: none;">
+            <fieldset id="frame" style="width:30% ; border:1; display: none;">
                     <legend>View the image </legend>        
                     <div >
                         <img src="../result_image/TimeSpy.png" class="allImage"id="TSimage" style="display:none;"/>
@@ -58,6 +55,7 @@
 
     <script>   
     function remove(){
+        document.location.reload()
         var images = document.getElementsByClassName('allImage');
         console.log(images)
         var l = images.length;

@@ -49,16 +49,16 @@ body{
     display: inline-block;
 }
 #TSimage{
-    width: 750;
+    width: 500px;
     height: 300px;
 }
 #FS1image, #FS2image{
-    width: 400px;
-    height: 250px;
+    width: 500px;
+    height: 300px;
 }
 #G1image,#G2image,#G3image,#G4image,#G5image{
-    width: 400px;
-    height: 250px;
+    width: 500px;
+    height: 300px;
 }
 .evo{
     width: 400px;
@@ -223,10 +223,7 @@ h1{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-  .btnImage{
-    width: 400px;
-    height: 150px;
-}
+
 .all_s{
     width: 400px;
     /* height: 300px; */
@@ -258,6 +255,10 @@ h1{
     width: 400px;
     height: 300px; 
  }
+ .btnImage{
+    width: 400px;
+    height: 250px;
+}
 /* 
 #monkey{
     font-size: 50px;
