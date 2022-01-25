@@ -76,13 +76,23 @@
                 <fieldset class="fs_scene" style="display:none; width: 40%;">
                     <legend>Scene1</legend>
                     <div class="inline-block1">
-                        <img src="../result_image/GCN/fssaliency_class_0_index_2.png" class='gcn_fs'id="FS_0_image" style="display:inline-block;">
+                        <img src="../result_image/GCN/saliency_class_0_index_900.png" class='gcn_fs'id="FS_0_image" style="display:none;">
+                        <img src="../result_image/GCN/saliency_class_0_index_1100.png" class='gcn_fs'id="FS_0_image" style="display:none;">
+                        <img src="../result_image/GCN/saliency_class_0_index_1300.png" class='gcn_fs'id="FS_0_image" style="display:none;">
+                        <img src="../result_image/GCN/saliency_class_0_index_2100.png" class='gcn_fs'id="FS_0_image" style="display:none;">
+                        <img src="../result_image/GCN/saliency_class_0_index_2300.png" class='gcn_fs'id="FS_0_image" style="display:none;">
+                        <img src="../result_image/GCN/saliency_class_0_index_2500.png" class='gcn_fs'id="FS_0_image" style="display:none;">
                     </div>
                 </fieldset>
                 <fieldset class="fs_scene" style="display:none;width: 40%;">
                     <legend>Scene2</legend>
                     <div class="inline-block1">
-                        <img src="../result_image/GCN/fssaliency_class_1_index_2.png" class='gcn_fs'id="FS_1_image" style="display:inline-block;"/>
+                        <img src="../result_image/GCN/saliency_class_1_index_900.png" class='gcn_fs'id="FS_1_image" style="display:none;">
+                        <img src="../result_image/GCN/saliency_class_1_index_1100.png" class='gcn_fs'id="FS_1_image" style="display:none;">
+                        <img src="../result_image/GCN/saliency_class_1_index_1300.png" class='gcn_fs'id="FS_1_image" style="display:none;"> 
+                        <img src="../result_image/GCN/saliency_class_1_index_2100.png" class='gcn_fs'id="FS_1_image" style="display:none;">
+                        <img src="../result_image/GCN/saliency_class_1_index_2300.png" class='gcn_fs'id="FS_1_image" style="display:none;">
+                        <img src="../result_image/GCN/saliency_class_1_index_2500.png" class='gcn_fs'id="FS_1_image" style="display:none;">                          
                     </div>
                 </fieldset>
 
@@ -198,7 +208,7 @@
             var option_frame = select_frame.options[select_frame.selectedIndex];
             console.log(option_frame)
             document.getElementById('fs_accc').style.display = "block";
-            document.getElementsByClassName('gcn_fs')[0].style.display = "block";
+
             document.getElementById('fs_wl').style.display = "block";
             
             var fs_scene = document.getElementsByClassName('fs_scene');
@@ -210,18 +220,36 @@
             }           
 
             var html = "<p>This frame belongs to Fire Strike";
-            if (option_frame.value==='400')
+            if (option_frame.value==='400'){
+                document.getElementsByClassName('gcn_fs')[0].style.display = "block";
+                document.getElementsByClassName('gcn_fs')[6].style.display = "block";
                 html+=" game <em>Scene1";
-            else if(option_frame.value==='600')
+                }
+            else if(option_frame.value==='600'){
+            document.getElementsByClassName('gcn_fs')[1].style.display = "block";
+            document.getElementsByClassName('gcn_fs')[7].style.display = "block";
                 html+=" game <em>Scene1";
-            else if(option_frame.value==='800')
+                }
+            else if(option_frame.value==='800'){
+            document.getElementsByClassName('gcn_fs')[2].style.display = "block";
+            document.getElementsByClassName('gcn_fs')[8].style.display = "block";
                 html+=" game <em>Scene1";
-            else if(option_frame.value==='1600')
+                }
+            else if(option_frame.value==='1600'){
+            document.getElementsByClassName('gcn_fs')[3].style.display = "block";
+            document.getElementsByClassName('gcn_fs')[9].style.display = "block";
                 html+=" game <em>Scene2";
-            else if(option_frame.value==='1800')
-                html+=" game <em>Scene2";     
-            else if(option_frame.value==='200')
-                html+=" game <em>Scene2";                                                                  
+                }
+            else if(option_frame.value==='1800'){
+            document.getElementsByClassName('gcn_fs')[4].style.display = "block";
+            document.getElementsByClassName('gcn_fs')[10].style.display = "block";
+                html+=" game <em>Scene2"; 
+                }    
+            else if(option_frame.value==='2000'){
+            document.getElementsByClassName('gcn_fs')[5].style.display = "block";
+            document.getElementsByClassName('gcn_fs')[11].style.display = "block";
+                html+=" game <em>Scene2";  
+                }                                                                
             html+="</em></p>";
             document.getElementById("frame_result").innerHTML = html;
                  
