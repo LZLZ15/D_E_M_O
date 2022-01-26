@@ -70,7 +70,7 @@
 
 
             <fieldset class="frame" style="display: none;width:70% ; border:1;">
-                <legend>View important nodes</legend>
+                <legend>View important nodes for prediction</legend>
 
 
                 <fieldset class="fs_scene" style="display:none; ">
@@ -100,31 +100,32 @@
                 <fieldset class="gtav_scene" style="display:none;">
                     <legend>Scene1</legend>
                     <div class="inline-block2">
-                        <img src="../result_image/GCN/gsaliency_class_0_index_2.png" class='gcn_gtav'id="GTA5_0_image" style="display:inline-block;">
+                        <img src="../result_image/GCN/saliency_class_0_index_46.png" class='gcn_gtav'id="GTA5_0_image" style="display:inline-block;">
                     </div>
                 </fieldset>
                 <fieldset class="gtav_scene" style="display:none;">
                     <legend>Scene2</legend>                   
                     <div class="inline-block2">
-                        <img src="../result_image/GCN/gsaliency_class_1_index_2.png" class='gcn_gtav'id="GTA5_1_image" style="display:inline-block;"/>
+                        <img src="../result_image/GCN/saliency_class_1_index_96.png" class='gcn_gtav'id="GTA5_1_image" style="display:inline-block;"/>
                     </div>
                 </fieldset>
                 <fieldset class="gtav_scene" style="display:none;">
                     <legend>Scene3</legend>                        
                     <div class="inline-block2">
-                        <img src="../result_image/GCN/gsaliency_class_2_index_2.png" class='gcn_gtav'id="GTA5_2_image" style="display:inline-block;">
+                        <img src="../result_image/GCN/saliency_class_2_index_146.png" class='gcn_gtav'id="GTA5_2_image" style="display:inline-block;">
                     </div>
                 </fieldset>
                 <fieldset class="gtav_scene" style="display:none;">
                     <legend>Scene4</legend>                        
                     <div class="inline-block2">
-                        <img src="../result_image/GCN/gsaliency_class_3_index_2.png" class='gcn_gtav'id="GTA5_3_image" style="display:inline-block;"/>
+                        <img src="../result_image/GCN/saliency_class_3_index_196.png" class='gcn_gtav'id="GTA5_3_image1" style="display:none;"/>
+                        <img src="../result_image/GCN/saliency_class_3_index_246.png" class='gcn_gtav'id="GTA5_3_image2" style="display:none;"/>
                     </div>
                 </fieldset>
                 <fieldset class="gtav_scene" style="display:none;">
                     <legend>Scene5</legend>                       
                     <div class="inline-block2">
-                        <img src="../result_image/GCN/gsaliency_class_4_index_2.png" class='gcn_gtav'id="GTA5_4_image" style="display:inline-block;">
+                        <img src="../result_image/GCN/saliency_class_4_index_296.png" class='gcn_gtav'id="GTA5_4_image" style="display:inline-block;">
                     </div>
                 </fieldset>
             </fieldset>
@@ -211,43 +212,49 @@
 
             document.getElementById('fs_wl').style.display = "block";
             
-            var fs_scene = document.getElementsByClassName('fs_scene');
-            console.log(fs_scene)
-            for (var i = 0; i < fs_scene.length; i++) {
-                    if(fs_scene[i].style.display==='none'){
-                        fs_scene[i].style.display='inline-block'
-                    }
-            }           
+            // var fs_scene = document.getElementsByClassName('fs_scene');
+            // console.log(fs_scene)
+            // for (var i = 0; i < fs_scene.length; i++) {
+            //         if(fs_scene[i].style.display==='none'){
+            //             fs_scene[i].style.display='inline-block'
+            //         }
+            // }           
 
             var html = "<p>This frame belongs to Fire Strike";
             if (option_frame.value==='400'){
+                document.getElementsByClassName('fs_scene')[0].style.display = "block";
                 document.getElementsByClassName('gcn_fs')[0].style.display = "block";
-                document.getElementsByClassName('gcn_fs')[6].style.display = "block";
+                // document.getElementsByClassName('gcn_fs')[6].style.display = "block";
                 html+=" game <em>Scene1";
                 }
             else if(option_frame.value==='600'){
-            document.getElementsByClassName('gcn_fs')[1].style.display = "block";
-            document.getElementsByClassName('gcn_fs')[7].style.display = "block";
+                document.getElementsByClassName('fs_scene')[0].style.display = "block";
+                document.getElementsByClassName('gcn_fs')[1].style.display = "block";
+            // document.getElementsByClassName('gcn_fs')[7].style.display = "block";
                 html+=" game <em>Scene1";
                 }
             else if(option_frame.value==='800'){
-            document.getElementsByClassName('gcn_fs')[2].style.display = "block";
-            document.getElementsByClassName('gcn_fs')[8].style.display = "block";
+                document.getElementsByClassName('fs_scene')[0].style.display = "block";
+                document.getElementsByClassName('gcn_fs')[2].style.display = "block";
+                // document.getElementsByClassName('gcn_fs')[8].style.display = "block";
                 html+=" game <em>Scene1";
                 }
             else if(option_frame.value==='1600'){
-            document.getElementsByClassName('gcn_fs')[3].style.display = "block";
-            document.getElementsByClassName('gcn_fs')[9].style.display = "block";
+                document.getElementsByClassName('fs_scene')[1].style.display = "block";
+                // document.getElementsByClassName('gcn_fs')[3].style.display = "block";
+                document.getElementsByClassName('gcn_fs')[9].style.display = "block";
                 html+=" game <em>Scene2";
                 }
             else if(option_frame.value==='1800'){
-            document.getElementsByClassName('gcn_fs')[4].style.display = "block";
-            document.getElementsByClassName('gcn_fs')[10].style.display = "block";
+                document.getElementsByClassName('fs_scene')[1].style.display = "block";
+                // document.getElementsByClassName('gcn_fs')[4].style.display = "block";
+                 document.getElementsByClassName('gcn_fs')[10].style.display = "block";
                 html+=" game <em>Scene2"; 
                 }    
             else if(option_frame.value==='2000'){
-            document.getElementsByClassName('gcn_fs')[5].style.display = "block";
-            document.getElementsByClassName('gcn_fs')[11].style.display = "block";
+                document.getElementsByClassName('fs_scene')[1].style.display = "block";
+                // document.getElementsByClassName('gcn_fs')[5].style.display = "block";
+                document.getElementsByClassName('gcn_fs')[11].style.display = "block";
                 html+=" game <em>Scene2";  
                 }                                                                
             html+="</em></p>";
@@ -260,31 +267,49 @@
             var option_frame = select_frame.options[select_frame.selectedIndex];
             console.log(option_frame)
             document.getElementById('gcn_accc').style.display = "block";
-            var gtav_scene = document.getElementsByClassName('gtav_scene');
-
             document.getElementById('gtav_wl').style.display = "block";
 
-            console.log(fs_scene)
-            for (var i = 0; i < gtav_scene.length; i++) {
-                    if(gtav_scene[i].style.display==='none'){
-                        gtav_scene[i].style.display='inline-block'
-                    }
-            }  
+            var gtav_scene = document.getElementsByClassName('gtav_scene');
+            // for (var i = 0; i < gtav_scene.length; i++) {
+            //         if(gtav_scene[i].style.display==='none'){
+            //             gtav_scene[i].style.display='inline-block'
+            //         }
+            // }  
 
             var html = "<p>This frame belongs to ";//GTA5 game <em>Scene1
             html+=option.value;
-            if (option_frame.value==='100')
+            if (option_frame.value==='100'){
+                gtav_scene[0].style.display='inline-block'
                 html+=" game <em>Scene1";
-            else if(option_frame.value==='200')
+            }
+               
+            else if(option_frame.value==='200'){
+                gtav_scene[1].style.display='inline-block'
                 html+=" game <em>Scene2";
-            else if(option_frame.value==='300')
+            }
+                
+            else if(option_frame.value==='300'){
+                gtav_scene[2].style.display='inline-block'
                 html+=" game <em>Scene3";
-            else if(option_frame.value==='400')
+            }
+                
+            else if(option_frame.value==='400'){
+                gtav_scene[3].style.display='inline-block'
+                document.getElementById('GTA5_3_image1').style.display = 'inline-block'; 
                 html+=" game <em>Scene4";
-            else if(option_frame.value==='500')
-                html+=" game <em>Scene4";     
-            else if(option_frame.value==='600')
-                html+=" game <em>Scene5";                                                                  
+            }
+                
+            else if(option_frame.value==='500'){
+                gtav_scene[3].style.display='inline-block'
+                document.getElementById('GTA5_3_image2').style.display = 'inline-block'; 
+                html+=" game <em>Scene4"; 
+            }
+                    
+            else if(option_frame.value==='600'){
+                gtav_scene[4].style.display='inline-block'
+                html+=" game <em>Scene5"; 
+            }
+                                                                                 
             html+="</em></p>";
             document.getElementById("frame_result").innerHTML = html;
         }
