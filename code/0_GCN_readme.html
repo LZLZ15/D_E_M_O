@@ -26,8 +26,11 @@
                 <h2>Scripts explanation </h2>
                 <p>All the scripts are written in python 3.8. To run the script, please lunch a python tools like Anaconda or directly run "python xx.py"</p>
                 <br>
+                <p>The input files are shader graphs representing by edgelist and nodelist. The output will be edgelist and nodelist of a grpah 
+                    which is the combination of all shader graphs in each frame
+                </p>
                 <ol id="order_list">
-                    <li>	Merge shader graphs from a frame to one disjoint graph for that frame 
+                    <li>Merge shader graphs from a frame to one disjoint graph for that frame 
                             <a href="../source_code/shader_prediction_explanability/merge_allGraphs_PerFrame.py">[code] </a>
                     <li>Predict which scene the unknown frame belongs to using graph convolutional neural network (GCN) and explainability method saliency map with contrastive gradients (CG)
                             <a href="https://github.com/tsKenneth/interpretable-graph-classification">[code] </a>                      
